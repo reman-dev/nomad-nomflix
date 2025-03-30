@@ -67,7 +67,7 @@ const Circle = styled(motion.span)`
   margin: 0 auto;
 `;
 
-const Search = styled.div`
+const Search = styled.form`
   display: flex;
   align-items: center;
   color: white;
