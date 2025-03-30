@@ -1,10 +1,9 @@
-// import styled from "styled-components";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import Router from "./Router";
-import { darkTheme, lightTheme } from "./theme";
-import { useRecoilValue } from "recoil";
-import { isDarkAtom } from "./atoms";
-
+import { createGlobalStyle } from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./Routes/Home";
+import Tv from "./Routes/Tv";
+import Search from "./Routes/Search";
+import Header from "./Components/Header";
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 html, body, div, span, applet, object, iframe,
@@ -33,10 +32,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+  font-weight: 300;
 	line-height: 1;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: ${(props) => props.theme.bgColor};
-  color: ${(props) => props.theme.textColor};
+  background-color: black;
+  color: ${(props) => props.theme.white.darker};
 }
 ol, ul {
 	list-style: none;
@@ -63,13 +63,23 @@ a {
 `;
 
 function App() {
-  const isDark = useRecoilValue(isDarkAtom);
   return (
     <>
-      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-        <GlobalStyle />
-        <Router />
-      </ThemeProvider>
+      <GlobalStyle />
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/tv">
+            <Tv />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </>
   );
 }

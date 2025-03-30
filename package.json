@@ -1,5 +1,5 @@
 {
-  "name": "nomad-react-master",
+  "name": "nomad-nomflix",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
     "gh-pages": "^6.3.0",
+    "motion": "^12.6.2",
     "prettier": "^3.5.3",
     "react": "^18.2.0",
     "react-apexcharts": "^1.7.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.14",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/react-router-dom": "^5.3.3",
@@ -38,5 +40,5 @@
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.1"
   },
-  "homepage": "https://reman-dev.github.io/nomad-react-master"
+  "homepage": "https://reman-dev.github.io/nomad-nomflix"
 }
